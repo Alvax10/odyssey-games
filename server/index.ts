@@ -1,5 +1,6 @@
 import { firestore } from "./db";
 import * as express from "express";
+import * as path from "path";
 import * as cors from "cors";
 
 // Inicializo la app y asigno el puerto
@@ -49,6 +50,13 @@ app.post("/player-name", function (req, res) {
                 });
             }
         });
+});
+
+const relativeRoute = path.resolve(__dirname + "../client");
+app.use(express.static(relativeRoute));
+
+app.get("*", (req, res) => {
+    res.sendFile(relativeRoute + "/index.html");
 });
 
 app.listen(port, function () {
