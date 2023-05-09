@@ -1,0 +1,1 @@
+console.log("Pagina de Angry Termy :D");

@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ESNext",
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+    },
+    "files": [
+        "./server/index.ts"
+    ]
+}

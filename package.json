@@ -1,0 +1,24 @@
+{
+  "name": "odyssey-games-web",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev:front": "parcel serve ./client/index.html",
+    "dev:api": "nodemon --watch ./server/index.ts --exec ts-node ./server/dev.ts",
+    "dev": "yarn dev:api && yarn dev:front",
+    "build:api": "tsc --project ./tsconfig.json",
+    "build:front": "parcel build ./client/index.html",
+    "build": "yarn build:api && yarn build:front",
+    "start": "node ./server/index.js"
+  },
+  "dependencies": {
+    "@vaadin/router": "^1.7.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "firebase": "^9.21.0",
+    "firebase-admin": "^11.8.0",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.4"
+  }
+}
