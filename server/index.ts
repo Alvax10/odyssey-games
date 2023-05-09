@@ -52,11 +52,11 @@ app.post("/player-name", function (req, res) {
         });
 });
 
-const relativeRoute = path.resolve(__dirname + "../client");
+const relativeRoute = path.resolve(__dirname + "../dist");
 app.use(express.static(relativeRoute));
 
 app.get("*", (req, res) => {
-    res.sendFile(relativeRoute + "/index.html");
+    res.sendFile(__dirname + "../client/index.html");
 });
 
 app.listen(port, function () {
