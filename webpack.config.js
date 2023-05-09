@@ -12,9 +12,8 @@ if (dev) {
 
 module.exports = {
     watch: dev,
-    root: "./",
     mode: process.env.NODE_ENV,
-    entry: "client/index.ts",
+    entry: "./client/index.ts",
     module: {
         rules: [
             {
