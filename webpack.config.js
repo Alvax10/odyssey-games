@@ -12,12 +12,13 @@ if (dev) {
 
 module.exports = {
     watch: dev,
-    mode: "development",
-    entry: "./client/index.ts",
+    root: "./",
+    mode: process.env.NODE_ENV,
+    entry: "client/index.ts",
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts?$/,
                 use: "ts-loader",
                 exclude: /node_modules/,
             },
