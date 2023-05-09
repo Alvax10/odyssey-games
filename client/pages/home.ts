@@ -21,7 +21,7 @@ class Home extends HTMLElement {
 
         divEl.innerHTML = `
             <div class="general-container">
-                <h2 class="title__web"> Odyssey Games </h2>
+                <h2 class="title__web"> Odyssey Games :D </h2>
             </div>
         `;
 
