@@ -52,5 +52,5 @@ app.post("/player-name", function (req, res) {
 });
 
 app.listen(port, function () {
-    console.log("Iniciado en el puerto: ", port);
+    console.log("Iniciado en el puerto:", port);
 });
