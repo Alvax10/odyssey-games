@@ -2,10 +2,10 @@
     "compilerOptions": {
         "module": "CommonJS",
         "target": "ESNext",
-        "resolveJsonModule": true,
+        "baseUrl": ".",
         "moduleResolution": "node",
     },
-    "files": [
-        "./server/index.ts"
-    ]
+    "include": [
+        "./server/index.ts",
+    ],
 }

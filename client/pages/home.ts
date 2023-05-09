@@ -23,6 +23,7 @@ class Home extends HTMLElement {
         `;
 
         divEl.innerHTML = `
+            <header-component></header-component>
             <div class="general-container">
                 <h2 class="title__web"> Odyssey Games :D </h2>
             </div>
