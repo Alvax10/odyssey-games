@@ -30,4 +30,4 @@ class Home extends HTMLElement {
     }
 }
 
-customElements.define("home", Home);
+customElements.define("home-page", Home);
