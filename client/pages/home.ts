@@ -17,6 +17,9 @@ class Home extends HTMLElement {
         const style = document.createElement("style");
 
         style.innerHTML = `
+            .title__web {
+                text-align: center;
+            }
         `;
 
         divEl.innerHTML = `
@@ -25,8 +28,8 @@ class Home extends HTMLElement {
             </div>
         `;
 
+        divEl.appendChild(style);
         this.shadow.appendChild(divEl);
-        this.shadow.appendChild(style);
     }
 }
 
