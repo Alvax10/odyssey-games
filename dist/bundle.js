@@ -20,39 +20,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./client/assets/burger-menu.png":
-/*!***************************************!*\
-  !*** ./client/assets/burger-menu.png ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"1b89348393e7bfa2dc14493ff3e975e0.png\");\n\n//# sourceURL=webpack://odyssey-games-web/./client/assets/burger-menu.png?");
-
-/***/ }),
-
-/***/ "./client/assets/cross.png":
-/*!*********************************!*\
-  !*** ./client/assets/cross.png ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"782313b7abac665c5ae5e372bf34c05f.png\");\n\n//# sourceURL=webpack://odyssey-games-web/./client/assets/cross.png?");
-
-/***/ }),
-
-/***/ "./client/assets/logo.png":
-/*!********************************!*\
-  !*** ./client/assets/logo.png ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"b1c5149371ff8ed96f943fd60035fdd6.png\");\n\n//# sourceURL=webpack://odyssey-games-web/./client/assets/logo.png?");
-
-/***/ }),
-
 /***/ "./client/components/header.ts":
 /*!*************************************!*\
   !*** ./client/components/header.ts ***!
@@ -60,7 +27,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Header = void 0;\nconst router_1 = __webpack_require__(/*! @vaadin/router */ \"./node_modules/@vaadin/router/dist/vaadin-router.js\");\nconst logo_png_1 = __webpack_require__(/*! ../assets/logo.png */ \"./client/assets/logo.png\");\nconst burger_menu_png_1 = __webpack_require__(/*! ../assets/burger-menu.png */ \"./client/assets/burger-menu.png\");\nconst cross_png_1 = __webpack_require__(/*! ../assets/cross.png */ \"./client/assets/cross.png\");\nclass Header extends HTMLElement {\n    shadow;\n    constructor() {\n        super();\n        this.shadow = this.attachShadow({ mode: 'open' });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    listeners() {\n        const menuDiv = document.createElement('div');\n        menuDiv.className = 'menu-open';\n        const menuStyle = document.createElement('style');\n        menuStyle.innerHTML = `\r\n                .menu-open {\r\n                    display: none;\r\n                }\r\n            `;\n        menuDiv.innerHTML = `\r\n            <img class=\"close-button\" src=\"${cross_png_1.default}\" alt=\"x-button\">\r\n            <div class=\"opciones\">\r\n                <h3 class=\"games\"> Games </h3>\r\n                <h3 class=\"news\"> News</h3>\r\n                <h3 class=\"contact-us\"> Contact us </h3>\r\n            </div>\r\n            `;\n        this.shadow.appendChild(menuDiv);\n        this.shadow.appendChild(menuStyle);\n        const burgerHamMenu = this.shadow.querySelector(\".menu\");\n        burgerHamMenu.addEventListener('click', (ev) => {\n            ev.preventDefault();\n            menuStyle.innerHTML = `\r\n\r\n                .menu-open {\r\n                    top: 0%;\r\n                    left: 0%;\r\n                    width: 100%;\r\n                    height: 100%;\r\n                    display: flex;\r\n                    position: absolute;\r\n                    flex-direction: column;\r\n                    background-color: #8AF1FF;\r\n                }\r\n\r\n                .close-button {\r\n                    width: 30px;\r\n                    height: 30px;\r\n                    padding: 20px;\r\n                    cursor: pointer;\r\n                    align-self: flex-end;\r\n                }\r\n\r\n                .opciones {\r\n                    display: flex;\r\n                    flex-direction: column;\r\n                    gap: 10px;\r\n                    align-self: center;\r\n                    justify-content: center;\r\n                }\r\n\r\n                .games {\r\n                    cursor: pointer;\r\n                    padding-left: 6px;\r\n                }\r\n\r\n                .news {\r\n                    cursor: pointer;\r\n                }\r\n\r\n                .contact-us {\r\n                    cursor: pointer;\r\n                    padding-left: 30px;\r\n                }\r\n            `;\n        });\n        const myData = this.shadow.querySelector('.games');\n        myData.addEventListener('click', (e) => {\n            e.preventDefault();\n            router_1.Router.go(\"/games-page\");\n        });\n        const myMascotsReported = this.shadow.querySelector('.news');\n        myMascotsReported.addEventListener('click', (e) => {\n            e.preventDefault();\n            router_1.Router.go(\"/news\");\n        });\n        const reportMascot = this.shadow.querySelector('.contact-us');\n        reportMascot.addEventListener('click', (e) => {\n            e.preventDefault();\n            router_1.Router.go(\"/contact-us\");\n        });\n        const closeButton = this.shadow.querySelector(\".close-button\");\n        closeButton.addEventListener('click', (e) => {\n            e.preventDefault();\n            menuStyle.innerHTML = `\r\n                .menu-open {\r\n                    display: none;\r\n                }\r\n                .close-button {\r\n                    cursor: pointer;\r\n                }\r\n            `;\n        });\n    }\n    render() {\n        const divEl = document.createElement('div');\n        const style = document.createElement('style');\n        style.innerHTML = `\r\n        .header {\r\n            width: 100%;\r\n            height: 60px;\r\n            display: flex;\r\n            align-items: center;\r\n            background-color: #F8DA54;\r\n            justify-content: space-between;\r\n        }\r\n        .menu {\r\n            width: 40px;\r\n        }\r\n\r\n        .logo {\r\n            border-radius: 5px;\r\n        }\r\n\r\n        .img {\r\n            cursor: pointer;\r\n            padding: 0 30px;\r\n        }\r\n        `;\n        divEl.innerHTML = `\r\n            <header class=\"header\">\r\n                <img class=\"img logo\" style=\"cursor: pointer;\" src=\"${logo_png_1.default}\" alt=\"logo\">\r\n                <img class=\"img menu\" src=\"${burger_menu_png_1.default}\" alt=\"menu\" >\r\n            </header>\r\n        `;\n        this.shadow.appendChild(style);\n        this.shadow.appendChild(divEl);\n        this.listeners();\n        const logoHome = this.shadow.querySelector(\".logo\");\n        logoHome.addEventListener('click', (e) => {\n            e.preventDefault();\n            router_1.Router.go(\"/\");\n        });\n    }\n}\nexports.Header = Header;\ncustomElements.define('header-component', Header);\n\n\n//# sourceURL=webpack://odyssey-games-web/./client/components/header.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.Header = void 0;\nconst router_1 = __webpack_require__(/*! @vaadin/router */ \"./node_modules/@vaadin/router/dist/vaadin-router.js\");\n// import logo from \"../assets/logo.png\";\n// import burgerMenu from \"../assets/burger-menu.png\";\n// import xButton from \"../assets/cross.png\";\nclass Header extends HTMLElement {\n    shadow;\n    constructor() {\n        super();\n        this.shadow = this.attachShadow({ mode: 'open' });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    listeners() {\n        const menuDiv = document.createElement('div');\n        menuDiv.className = 'menu-open';\n        const menuStyle = document.createElement('style');\n        menuStyle.innerHTML = `\r\n                .menu-open {\r\n                    display: none;\r\n                }\r\n            `;\n        menuDiv.innerHTML = `\r\n            <img class=\"close-button\" src=\"/assets/cross.png\" alt=\"x-button\">\r\n            <div class=\"opciones\">\r\n                <h3 class=\"games\"> Games </h3>\r\n                <h3 class=\"news\"> News</h3>\r\n                <h3 class=\"contact-us\"> Contact us </h3>\r\n            </div>\r\n            `;\n        this.shadow.appendChild(menuDiv);\n        this.shadow.appendChild(menuStyle);\n        const burgerHamMenu = this.shadow.querySelector(\".menu\");\n        burgerHamMenu.addEventListener('click', (ev) => {\n            ev.preventDefault();\n            menuStyle.innerHTML = `\r\n\r\n                .menu-open {\r\n                    top: 0%;\r\n                    left: 0%;\r\n                    width: 100%;\r\n                    height: 100%;\r\n                    display: flex;\r\n                    position: absolute;\r\n                    flex-direction: column;\r\n                    background-color: #8AF1FF;\r\n                }\r\n\r\n                .close-button {\r\n                    width: 30px;\r\n                    height: 30px;\r\n                    padding: 20px;\r\n                    cursor: pointer;\r\n                    align-self: flex-end;\r\n                }\r\n\r\n                .opciones {\r\n                    display: flex;\r\n                    flex-direction: column;\r\n                    gap: 10px;\r\n                    align-self: center;\r\n                    justify-content: center;\r\n                }\r\n\r\n                .games {\r\n                    cursor: pointer;\r\n                    padding-left: 6px;\r\n                }\r\n\r\n                .news {\r\n                    cursor: pointer;\r\n                }\r\n\r\n                .contact-us {\r\n                    cursor: pointer;\r\n                    padding-left: 30px;\r\n                }\r\n            `;\n        });\n        const myData = this.shadow.querySelector('.games');\n        myData.addEventListener('click', (e) => {\n            e.preventDefault();\n            router_1.Router.go(\"/games-page\");\n        });\n        const myMascotsReported = this.shadow.querySelector('.news');\n        myMascotsReported.addEventListener('click', (e) => {\n            e.preventDefault();\n            router_1.Router.go(\"/news\");\n        });\n        const reportMascot = this.shadow.querySelector('.contact-us');\n        reportMascot.addEventListener('click', (e) => {\n            e.preventDefault();\n            router_1.Router.go(\"/contact-us\");\n        });\n        const closeButton = this.shadow.querySelector(\".close-button\");\n        closeButton.addEventListener('click', (e) => {\n            e.preventDefault();\n            menuStyle.innerHTML = `\r\n                .menu-open {\r\n                    display: none;\r\n                }\r\n                .close-button {\r\n                    cursor: pointer;\r\n                }\r\n            `;\n        });\n    }\n    render() {\n        const divEl = document.createElement('div');\n        const style = document.createElement('style');\n        style.innerHTML = `\r\n        .header {\r\n            width: 100%;\r\n            height: 60px;\r\n            display: flex;\r\n            align-items: center;\r\n            background-color: #F8DA54;\r\n            justify-content: space-between;\r\n        }\r\n        .menu {\r\n            width: 40px;\r\n        }\r\n\r\n        .logo {\r\n            border-radius: 5px;\r\n        }\r\n\r\n        .img {\r\n            width: 60px;\r\n            height: 60px;\r\n            cursor: pointer;\r\n            padding: 0 30px;\r\n        }\r\n        `;\n        divEl.innerHTML = `\r\n            <header class=\"header\">\r\n                <img class=\"img logo\" style=\"cursor: pointer;\" src=\"/assets/logo.png\" alt=\"logo\">\r\n                <img class=\"img menu\" src=\"/assets/burger-menu.png\" alt=\"menu\" >\r\n            </header>\r\n        `;\n        divEl.appendChild(style);\n        this.shadow.appendChild(divEl);\n        this.listeners();\n        const logoHome = this.shadow.querySelector(\".logo\");\n        logoHome.addEventListener('click', (e) => {\n            e.preventDefault();\n            router_1.Router.go(\"/\");\n        });\n    }\n}\nexports.Header = Header;\ncustomElements.define('header-component', Header);\n\n\n//# sourceURL=webpack://odyssey-games-web/./client/components/header.ts?");
 
 /***/ }),
 
@@ -81,7 +48,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n__we
   \******************************/
 /***/ (() => {
 
-eval("class Home extends HTMLElement {\n    shadow;\n    constructor() {\n        super();\n        this.shadow = this.attachShadow({ mode: 'open' });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        const divEl = document.createElement(\"div\");\n        const style = document.createElement(\"style\");\n        style.innerHTML = `\r\n            .title__web {\r\n                text-align: center;\r\n            }\r\n        `;\n        divEl.innerHTML = `\r\n            <header-component></header-component>\r\n            <div class=\"general-container\">\r\n                <h2 class=\"title__web\"> Odyssey Games :D </h2>\r\n            </div>\r\n        `;\n        divEl.appendChild(style);\n        this.shadow.appendChild(divEl);\n    }\n}\ncustomElements.define(\"home-page\", Home);\n\n\n//# sourceURL=webpack://odyssey-games-web/./client/pages/home.ts?");
+eval("class Home extends HTMLElement {\n    shadow;\n    constructor() {\n        super();\n        this.shadow = this.attachShadow({ mode: 'open' });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        const divEl = document.createElement(\"div\");\n        const style = document.createElement(\"style\");\n        style.innerHTML = `\r\n            .title__web {\r\n                text-align: center;\r\n            }\r\n        `;\n        divEl.innerHTML = `\r\n            <header-component></header-component>\r\n            <div class=\"general-container\">\r\n                <h2 class=\"title__web\"> Odyssey Games :D </h2>\r\n            </div>\r\n            <a href=\"https://www.flaticon.com/free-icons/instagram-logo\" title=\"icons\">Instagram logo icons created by Hight Quality Icons - Flaticon</a>\r\n        `;\n        divEl.appendChild(style);\n        this.shadow.appendChild(divEl);\n    }\n}\ncustomElements.define(\"home-page\", Home);\n\n\n//# sourceURL=webpack://odyssey-games-web/./client/pages/home.ts?");
 
 /***/ }),
 
@@ -135,18 +102,6 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\ncons
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -161,29 +116,6 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\ncons
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
-/******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript)
-/******/ 				scriptUrl = document.currentScript.src;
-/******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) {
-/******/ 					var i = scripts.length - 1;
-/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
-/******/ 				}
-/******/ 			}
-/******/ 		}
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

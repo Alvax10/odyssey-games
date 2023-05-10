@@ -27,6 +27,7 @@ class Home extends HTMLElement {
             <div class="general-container">
                 <h2 class="title__web"> Odyssey Games :D </h2>
             </div>
+            <a href="https://www.flaticon.com/free-icons/instagram-logo" title="icons">Instagram logo icons created by Hight Quality Icons - Flaticon</a>
         `;
 
         divEl.appendChild(style);

@@ -1,6 +1,6 @@
 import { Router } from "@vaadin/router";
 
-import logo from "../assets/logo.png";
+import logo from "../assets/logo";
 import burgerMenu from "../assets/burger-menu.png";
 import xButton from "../assets/cross.png";
 
@@ -146,6 +146,8 @@ export class Header extends HTMLElement {
         }
 
         .img {
+            width: 60px;
+            height: 60px;
             cursor: pointer;
             padding: 0 30px;
         }
@@ -158,7 +160,7 @@ export class Header extends HTMLElement {
             </header>
         `;
 
-        this.shadow.appendChild(style);
+        divEl.appendChild(style);
         this.shadow.appendChild(divEl);
         this.listeners();
 
