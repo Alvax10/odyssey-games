@@ -1,8 +1,8 @@
 import { Router } from "@vaadin/router";
 
-import logo from "../assets/logo";
-import burgerMenu from "../assets/burger-menu.png";
-import xButton from "../assets/cross.png";
+const logo = require("../assets/imgs/logo.png");
+const burgerMenu = require("../assets/imgs/burger-menu.png");
+const xButton = require("../assets/imgs/cross.png");
 
 export class Header extends HTMLElement {
 
@@ -31,9 +31,9 @@ export class Header extends HTMLElement {
         menuDiv.innerHTML = `
             <img class="close-button" src="${xButton}" alt="x-button">
             <div class="opciones">
-                <h3 class="games"> Games </h3>
-                <h3 class="news"> News</h3>
-                <h3 class="contact-us"> Contact us </h3>
+                <h3 class="games option"> Games </h3>
+                <h3 class="news option"> News</h3>
+                <h3 class="contact-us option"> Contact us </h3>
             </div>
             `;
 
@@ -54,7 +54,7 @@ export class Header extends HTMLElement {
                     display: flex;
                     position: absolute;
                     flex-direction: column;
-                    background-color: #8AF1FF;
+                    background-color: #F8DA54;
                 }
 
                 .close-button {
@@ -66,25 +66,17 @@ export class Header extends HTMLElement {
                 }
 
                 .opciones {
-                    display: flex;
-                    flex-direction: column;
                     gap: 10px;
+                    display: flex;
                     align-self: center;
+                    flex-direction: column;
                     justify-content: center;
                 }
 
-                .games {
+                .option {
                     cursor: pointer;
-                    padding-left: 6px;
-                }
-
-                .news {
-                    cursor: pointer;
-                }
-
-                .contact-us {
-                    cursor: pointer;
-                    padding-left: 30px;
+                    font-size: 30px;
+                    text-align: center;
                 }
             `;
 
@@ -131,7 +123,7 @@ export class Header extends HTMLElement {
         style.innerHTML = `
         .header {
             width: 100%;
-            height: 60px;
+            height: 75px;
             display: flex;
             align-items: center;
             background-color: #F8DA54;
@@ -139,17 +131,18 @@ export class Header extends HTMLElement {
         }
         .menu {
             width: 40px;
+            height: 40px;
         }
 
         .logo {
-            border-radius: 5px;
+            border-radius: 30px;
         }
 
         .img {
             width: 60px;
             height: 60px;
+            margin: 0 10px;
             cursor: pointer;
-            padding: 0 30px;
         }
         `;
 

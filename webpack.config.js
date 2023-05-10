@@ -5,14 +5,14 @@ const liveServer = require("live-server");
 if (dev) {
     liveServer.start({
         root: "./",
-        file: "client/index.html",
+        file: "dist/index.html",
         port: 3010,
     });
 }
 
 module.exports = {
     watch: dev,
-    mode: "development",
+    mode: process.env.NODE_ENV,
     entry: "./client/index.ts",
     module: {
         rules: [
@@ -23,22 +23,23 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: ["style-loader", {
-                    loader: "css-loader",
-                    options: {
-                        modules: true,
-                    }
-                }],
+                use: ['style-loader', 'css-loader'],
             },
             {
-                test: /\.(ico|jpg|jpeg|png|gif|svg)(\?.*)?$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[path][name].[ext]',
-                        context: 'client'
-                    }
-                }
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "[name].[contenthash].[ext]",
+                            outputPath: "fonts/",
+                        },
+                    },
+                ],
             },
         ],
     },
