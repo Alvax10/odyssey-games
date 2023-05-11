@@ -1,7 +1,7 @@
+
 const fondo1 = require('../assets/imgs/CirculoFondo1.png');
 const fondo2 = require('../assets/imgs/CirculoFondo2.png');
 const fondoArt = require('../assets/imgs/menuPrincipal.png');
-
 
 class Home extends HTMLElement {
 
@@ -56,7 +56,12 @@ class Home extends HTMLElement {
 
             .lower-body {
                 display: flex;
+                margin: 40px 0;
                 flex-direction: column;
+                background-position: right;
+                background-repeat: no-repeat;
+                background-size: 300px 280px;
+                background-image: url(${fondo2});
             }
 
             .sub-title {

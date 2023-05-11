@@ -44,6 +44,9 @@ export class Header extends HTMLElement {
         burgerHamMenu.addEventListener('click', (ev) => {
             ev.preventDefault();
 
+            const footer = document.children[0].children[1].children[0].children[0].shadowRoot?.children[0].children[2].shadowRoot?.children[0].children[0] as HTMLElement;
+            footer.style.display = "none";
+
             menuStyle.innerHTML = `
 
                 .menu-open {
@@ -58,24 +61,23 @@ export class Header extends HTMLElement {
                 }
 
                 .close-button {
-                    width: 30px;
-                    height: 30px;
+                    width: 60px;
+                    height: 60px;
                     padding: 20px;
                     cursor: pointer;
                     align-self: flex-end;
                 }
 
                 .opciones {
-                    gap: 10px;
+                    gap: 90px;
                     display: flex;
                     align-self: center;
                     flex-direction: column;
-                    justify-content: center;
                 }
 
                 .option {
                     cursor: pointer;
-                    font-size: 30px;
+                    font-size: 45px;
                     text-align: center;
                 }
             `;
@@ -103,6 +105,9 @@ export class Header extends HTMLElement {
         const closeButton = this.shadow.querySelector(".close-button") as any;
         closeButton.addEventListener('click', (e) => {
             e.preventDefault();
+
+            const footer = document.children[0].children[1].children[0].children[0].shadowRoot?.children[0].children[2].shadowRoot?.children[0].children[0] as HTMLElement;
+            footer.style.display = "";
 
             menuStyle.innerHTML = `
                 .menu-open {

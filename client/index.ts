@@ -1,4 +1,5 @@
 import "./router";
+import "./state";
 import "./pages/home";
 import "./components/header";
 import "./components/footer";

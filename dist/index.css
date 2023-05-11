@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Urbanist";
+    src: url(../client/assets/fonts/Urbanist-Regular.ttf) format('ttf');
+}
+
+* {
+    font-family: "Urbanist";
+}
+
+body {
+    margin: 0;
+}
