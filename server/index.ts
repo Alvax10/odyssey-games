@@ -20,33 +20,27 @@ app.get("/env", function (req, res) {
     });
 });
 
-// Trae el environment del hosting
-// app.get("/db-env", (req, res) => {
-//     res.json({
-//         "db-host": process.env.DB_HOST,
-//     });
-// });
 
 // Chequea que el nombre de usuario no exista y lo crea
 app.post("/player-name", function (req, res) {
 
-    var name = req.body.name;
+    const { name } = req.query;
     userCollection.where("name", "==", name)
         .get().then(function (searchRes) {
 
             if (searchRes.empty) {
                 userCollection.add({
                     name: name
-                }).then(function (newUserRef) {
+
+                }).then(function () {
                     res.json({
-                        id: newUserRef.id,
-                        "new": true
+                        new: true
                     });
                 });
             }
             else {
                 res.status(200).json({
-                    Mensaje: "Este nombre ya existe boludo, me estas jodiendo?..."
+                    new: false
                 });
             }
         });
